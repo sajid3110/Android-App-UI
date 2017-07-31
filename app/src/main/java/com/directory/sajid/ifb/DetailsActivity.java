@@ -2,10 +2,13 @@ package com.directory.sajid.ifb;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatCheckBox;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ActionMenuView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -42,25 +45,18 @@ public class DetailsActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.list);
 
         listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-        String[] items = {"Part 1" , "Part 2", "Part 3", "Part 4", "Part 5"};
+        String[] items = {"Load capacity" , "Wash temperature" , "Energy Consumption" , "Energy efficiency" , "Water consumption" , "Wash Quality rating" , "Rinse efficiency" , "Spin Efficiency" , "Cold Intake" , "Hot water intake"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this , android.R.layout.simple_list_item_multiple_choice , items  );
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(DetailsActivity.this, "Hello", Toast.LENGTH_SHORT).show();
-            }
-        });
+        //item click code
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                Toast.makeText(DetailsActivity.this, "Hello", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
-
-
-
-        Button b = new Button(DetailsActivity.this);
-        b.setText("Update");
-        b.setBackgroundResource(R.drawable.buttonshape);
-        b.setTextColor(Color.WHITE);
-        linearLayout.addView(b);
 
     }
 }

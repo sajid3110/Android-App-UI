@@ -21,20 +21,19 @@ public class ViewFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_view, container, false);
 
         String[] myList = new String[]{
-                "item 1" ,
-                "item 2" ,
-                "item 3" ,
-                "item 4" ,
-                "item 5" ,
-                "item 6" ,
-                "item 7" ,
-                "item 8" ,
-                "item 9" ,
-                "item 10" ,
-                "item 11" ,
-                "item 12" ,
-                "item 13" ,
-                "item 14" ,
+                "IFB 8888 Eco" ,
+                "IFB 8889 Eco" ,
+                "IFB 8890 Eco" ,
+                "IFB 8891 Eco" ,
+                "IFB 8892 Eco" ,
+                "IFB 8893 Eco" ,
+                "IFB 8894 Eco" ,
+                "IFB 8895 Eco" ,
+                "IFB 8896 Eco" ,
+                "IFB 8897 Eco" ,
+                "IFB 8898 Eco" ,
+
+
         };
 
 
