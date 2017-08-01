@@ -10,47 +10,52 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 public class ViewFragment extends Fragment {
 
 
-    ListView listview;
+    ListView listview ;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_view, container, false);
-
-        String[] myList = new String[]{
-                "IFB 8888 Eco" ,
-                "IFB 8889 Eco" ,
-                "IFB 8890 Eco" ,
-                "IFB 8891 Eco" ,
-                "IFB 8892 Eco" ,
-                "IFB 8893 Eco" ,
-                "IFB 8894 Eco" ,
-                "IFB 8895 Eco" ,
-                "IFB 8896 Eco" ,
-                "IFB 8897 Eco" ,
-                "IFB 8898 Eco" ,
-
-
-        };
-
-
         listview = rootView.findViewById(R.id.listView);
+        ArrayList<Product> productList = new ArrayList<>();
+        //create product objects
+        Product p = new Product("IFB ECO 8879" , "07 : 10 : 00");
+        productList.add(p);
+         p = new Product("IFB 8880 ECO" , "07 : 10 : 00");
+        productList.add(p);
+         p = new Product("IFB 8881 ECO" , "07 : 10 : 00");
+        productList.add(p);
+         p = new Product("IFB 8882 ECO" , "07 : 10 : 00");
+        productList.add(p);
+         p = new Product("IFB 8883 ECO" , "07 : 10 : 00");
+        productList.add(p);
+         p = new Product("IFB 8884 ECO" , "07 : 10 : 00");
+        productList.add(p);
+         p = new Product("IFB 8885 ECO" , "07 : 10 : 00");
+        productList.add(p);
+         p = new Product("IFB 8886 ECO" , "07 : 10 : 00");
+        productList.add(p);
+         p = new Product("IFB 8887 ECO" , "07 : 10 : 00");
+        productList.add(p);
+         p = new Product("IFB 8888 ECO" , "07 : 10 : 00");
+        productList.add(p);
+         p = new Product("IFB 8889 ECO" , "07 : 10 : 00");
+        productList.add(p);
 
-        ArrayAdapter adapter = new ArrayAdapter(
-                getActivity(),
-                android.R.layout.simple_list_item_1,
-                myList);
-
+        ProductListAdapter adapter = new ProductListAdapter(getContext(), R.layout.adapter_view_layout , productList);
         listview.setAdapter(adapter);
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Product clickedObj = (Product)adapterView.getItemAtPosition(i);
                 Intent intent = new Intent(getActivity() , DetailsActivity.class);
-                intent.putExtra("listItem" , listview.getItemAtPosition(i).toString() );
+                intent.putExtra("listItem" , clickedObj.getModel_no() );
                 startActivity(intent);
             }
         });
