@@ -108,6 +108,7 @@
               android:layout_height="60dp"
               android:layout_gravity="center"
               android:background="@drawable/scan_img"
+              android:id="@+id/scn_btn"
               />
 
 
